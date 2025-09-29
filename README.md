@@ -33,3 +33,8 @@ In order to evaluate customer behavior and marketing oppertunities, we focoused 
 * **Gender Comparison:** Male and Female customers showed similar monthly spending throughout the year, with only a slight difference between the groups. 
 * **Monthly Patterns:** Spending spikes were observed in March, June, November, and December.
 
+### Regional Analysis 
+* State-level spending against the national average showed a wide distribution across the U.S. 
+* **High-Performing Regions:** Strongest states were in the Northeast and West, outperforming the national average. 
+* **Low-Performing Regions:** Many Northern states underperformed relative to the national benchmark 
+* **Regional Variance (2022):** The spread between the top and bottom performing states in 2022 was approximately 76% relative to the national average, highlighting significant geographic disparities in Amazon shopping behavior.c 
