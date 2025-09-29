@@ -46,7 +46,7 @@ Our recommendations our catered to the marketing department regarding what custo
 * **Holiday campaign:** Emphasizing convenience of gifting for the holiday season in Q4 when spending is at its highest.  
 * **Summer promotions:** Launch targeted summer and end of season campaigns to capitalize on the spikes in June/July. 
 ### Customer Growth and Retention 
-* **Leverage Core Customer Insights: Focus campaigns on the age group 25-44 and larger households, which had the highest spending levels. 
+* **Leverage Core** Customer Insights: Focus campaigns on the age group 25-44 and larger households, which had the highest spending levels. 
 * **Targeted Ads:** Create family-oriented promotions for larger households (4+). Highlighting products for children and household activities.  
 * **Loyalty Programs:** Develop incentives by introducing repeat purchase discounts and product subscriptions.
 * ### Regional Growth Strategies 
@@ -60,3 +60,11 @@ Our recommendations our catered to the marketing department regarding what custo
 * **Data Gaps:** Thousands of rows in amazon_purchases contained missing values for title and category. These fields were normalized to "Unknown" to since every record had an asin_isbn. 
 * **Date Range:** Although the dataset documentation indicates coverage through 2022, the raw data included 3,506 purchases from 2023 and one record from 2024. Clarification is needed on whether these transactions should be retained or excluded for accuracy. 
 * **Geographic Labels:** District of Columbia appeared in the data but is not a U.S. state. Guidance is required on whether to treat it as a separate region, merge it with surrounding states, or exclude it from state-level comparisons.
+
+## Dashboard 
+Explore the full interactive Tableau dashboard by clicking the image below.
+[![Amazon Dashboard](Images/Amazon%20DB%20SS.png)](https://public.tableau.com/views/AmazonMarketingInsightsDemographicsTrendsRegions/AmazonDB?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+
+### Original Dataset  
+[Click here for link to original data](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi%3A10.7910%2FDVN%2FYGLYDY)
+
