@@ -99,3 +99,50 @@ FROM purchase_rid
 GROUP BY YEAR(order_date), MONTH(order_date), `Q-demos-gender`
 ORDER BY yr, mo, gender;
 
+-- What are the average orders in 2021 and 2022 per age group
+SELECT
+  t.age,
+  ROUND(AVG(t.orders_in_year),0) AS average_orders,
+  ROUND(AVG(t.spent_in_year),2)  AS average_spent,
+  COUNT(*)              AS num_customers
+FROM (
+  SELECT
+    `Survey ResponseID`       AS id,
+    `Q-demos-age`             AS age,
+    YEAR(order_date)          AS yr,
+    COUNT(*)                  AS orders_in_year,
+    SUM(purchase_amount)      AS spent_in_year
+  FROM purchase_rid
+  WHERE order_date BETWEEN '2021-01-01' AND '2022-12-31'
+  GROUP BY `Survey ResponseID`, `Q-demos-age`, YEAR(order_date)
+) AS t
+WHERE t.yr = 2022
+GROUP BY t.age
+ORDER BY average_orders DESC;
+
+-- How does average spending per respondent vary by state in 2022 compared to the national average?
+WITH state_stats AS (
+  SELECT
+    `Q-demos-state`                  AS state,
+    COUNT(*)                         AS respondents,
+    AVG(total_spent)                 AS avg_spend_per_resp
+  FROM purchase_dm
+  WHERE YEAR(last_purchase) = 2022
+    AND `Q-demos-state` IS NOT NULL
+    AND TRIM(`Q-demos-state`) <> ''
+    AND `Q-demos-state` <> 'Unknown'
+  GROUP BY `Q-demos-state`
+  HAVING COUNT(*) >= 10      
+),
+global AS (
+  SELECT AVG(avg_spend_per_resp) AS national_avg
+  FROM state_stats
+)
+SELECT
+  ss.state,
+  ss.respondents,
+  ROUND(ss.avg_spend_per_resp, 2) AS avg_spend_per_resp,
+  ROUND(100.0 * (ss.avg_spend_per_resp - g.national_avg) / g.national_avg, 2) AS pct_vs_national
+FROM state_stats ss
+CROSS JOIN global g
+ORDER BY pct_vs_national DESC;
