@@ -63,7 +63,7 @@ Our recommendations our catered to the marketing department regarding what custo
 
 ## Dashboard 
 Explore the full interactive Tableau dashboard by clicking the image below.
-[![Amazon Dashboard](Images/Amazon%20DB%20SS.png)](https://public.tableau.com/views/AmazonMarketingInsightsDemographicsTrendsRegions/AmazonDB?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+[![Amazon Dashboard](Images/Amazon%20SS.png)](https://public.tableau.com/views/AmazonMarketingInsightsDemographicsTrendsRegions/AmazonDB?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 ### Original Dataset  
 [Click here for link to original data](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi%3A10.7910%2FDVN%2FYGLYDY)
